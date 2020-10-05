@@ -2,41 +2,18 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Art 107 Project 1</title>
+    <title>Hello, WebVR! • A-Frame</title>
     <meta name="description" content="Hello, WebVR! • A-Frame">
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script>
-  AFRAME.registerComponent('modify-materials', {
-    init: function () {
-      // Wait for model to load.
-      this.el.addEventListener('model-loaded', () => {
-        // Grab the mesh / scene.
-        const obj = this.el.getObject3D('mesh');
-        // Go over the submeshes and modify materials we want.
-        obj.traverse(node => {
-          if (node.name.indexOf('ship') !== -1) {
-            node.material.color.set('red');
-          }
-        });
-      });
-    }
-  });
-</script>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js">
+    </script>
   </head>
   <body>
-    <a-scene background="color: lightblue">
+    <a-scene background="color: black">
       <a-assets>
-      <a-asset-item id="gun" src="https://cdn.glitch.com/cd87fcb8-a6ad-4a41-9057-dece48355642%2Fguns.gltf?v=1601279229482"> </a-asset-item>
-      <a-asset-item id="phone" src="https://cdn.glitch.com/cd87fcb8-a6ad-4a41-9057-dece48355642%2Fphone.glb?v=1601275990134d"> </a-asset-item>
+      <a-asset-item id="scene" src="https://cdn.glitch.com/c627e80c-2d0d-48a7-9051-170f9b157e63%2FArt107proj1%20walls.gltf?v=1601800203600"></a-asset-item>
       </a-assets>
-      <a-entity gltf-model="https://cdn.glitch.com/cd87fcb8-a6ad-4a41-9057-dece48355642%2Fphone.glb?v=1601275990134" postion="-3.8234 0.61851 -5.12172" rotation="0 160.26000000000002 0" scale="0.5 0.5 1" color="red" shadow="" position="2.35662 1.20933 -6.04975"></a-entity>dw
-      <a-entity gltf-model="https://cdn.glitch.com/cd87fcb8-a6ad-4a41-9057-dece48355642%2Fguns.gltf?v=1601279229482" position="-2.84965 2.36416 -5.12172" rotation="" scale="1 2 3" color="" shadow=""></a-entity>
-      <a-box position="-3.47104 0.5 -5.03252" rotation="0 45 0" color="black" shadow="" material="" geometry=""></a-box>
-      <a-box position="2.44891 0.5 -6.40772" rotation="0 45 0" color="black" shadow="" material="" geometry=""></a-box>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="green" shadow></a-plane>
-      <a-plane position="-0.22106 1.81062 -9.3945" rotation="0 0 90" width="10" height="10" color="green" shadow="" material="color: #79dbe2; normalMap: [object HTMLImageElement]" geometry=""></a-plane>
-      <a-plane position="-0.22106 1.81062 -9.3945" rotation="0 0 90" width="10" height="10" color="green" shadow="" material="color: #79dbe2; normalMap: [object HTMLImageElement]" geometry=""></a-plane>
+      <a-entity gltf-model="#scene" position="0 0 -4" scale="1 1 1"></a-entity>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
     </a-scene>
-    
   </body>
 </html>
